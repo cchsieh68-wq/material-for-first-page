@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.clasprc.json
+.clasp.json
+gas/.clasp.json
+node_modules/
+server-error.log
+server-out.log
+clasp-login.*
+clasp-scope-login.*
