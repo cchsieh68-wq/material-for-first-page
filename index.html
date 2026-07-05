@@ -198,6 +198,7 @@
       min-height: 340px;
       padding: 0;
       white-space: pre-wrap;
+      overflow-wrap: anywhere;
       line-height: 1.65;
       color: var(--ink);
     }
@@ -307,7 +308,7 @@
   </div>
 
   <script>
-    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbztqCiN2ZcdOmNRdluyaLh9jOCDfQercZo6dXYHdmag3besJctcMXLI_NUtQpjFk6dl/exec";
+    const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxC8nhjHBYdI-kJO15snVGLVsbFRcn-9krKWw50ODNC9zBCkLhW-S7pFGaQBzLnl4-6/exec";
 
     const transcript = document.querySelector("#transcript");
     const format = document.querySelector("#format");
@@ -322,10 +323,10 @@
     const lineCount = document.querySelector("#lineCount");
 
     const samples = {
-      executive: "王經理：今天先確認節能專案進度。LED 汰換已完成 70%，空壓機洩漏檢測還缺 B 棟。\\n李小姐：供應商報價比預算高 8%，但交期可提前兩週。\\n陳主任：下週三前整理 ROI 試算，並把風險列入董事會簡報。\\n王經理：決議是先核准第一階段，第二階段等 ROI 更新後再排程。",
-      project: "PM：本週登入模組完成，報表匯出延後。\\n工程：延後原因是權限規則還在確認，預計週五補測。\\n設計：新版流程圖今晚提供。\\n客戶：希望下週二看到可點擊 demo，並加入錯誤訊息文案。",
-      sales: "客戶：目前最痛的是每月盤點花三天，資料又常常對不起來。\\n業務：我們可以先導入庫存儀表板，兩週內做 PoC。\\n客戶：預算需要控制在 30 萬內，若能串 ERP 會優先。\\n業務：週五前提供提案與時程。",
-      class: "老師：今天討論 GitHub Pages、GAS proxy 和 Gemini API 的三層架構。\\n學生：API key 不能放前端，要存在 GAS 屬性。\\n老師：作業是完成一個摘要器，並確認 GitHub repo 沒有 key。\\n學生：下次會測試部署網址和錯誤處理。"
+      executive: "王經理：今天先確認節能專案進度。LED 汰換已完成 70%，空壓機洩漏檢測還缺 B 棟。\n李小姐：供應商報價比預算高 8%，但交期可提前兩週。\n陳主任：下週三前整理 ROI 試算，並把風險列入董事會簡報。\n王經理：決議是先核准第一階段，第二階段等 ROI 更新後再排程。",
+      project: "PM：本週登入模組完成，報表匯出延後。\n工程：延後原因是權限規則還在確認，預計週五補測。\n設計：新版流程圖今晚提供。\n客戶：希望下週二看到可點擊 demo，並加入錯誤訊息文案。",
+      sales: "客戶：目前最痛的是每月盤點花三天，資料又常常對不起來。\n業務：我們可以先導入庫存儀表板，兩週內做 PoC。\n客戶：預算需要控制在 30 萬內，若能串 ERP 會優先。\n業務：週五前提供提案與時程。",
+      class: "老師：今天討論 GitHub Pages、GAS proxy 和 Gemini API 的三層架構。\n學生：API key 不能放前端，要存在 GAS 屬性。\n老師：作業是完成一個摘要器，並確認 GitHub repo 沒有 key。\n學生：下次會測試部署網址和錯誤處理。"
     };
 
     function updateStats() {
@@ -370,7 +371,7 @@
 
         const data = await res.json();
         if (!res.ok || !data.ok) {
-          throw new Error(data.error || "摘要服務暫時無法使用");
+          throw new Error(formatError(data.error || "摘要服務暫時無法使用"));
         }
         output.textContent = data.summary;
         status.textContent = "摘要完成";
@@ -390,6 +391,16 @@
         '"': "&quot;",
         "'": "&#039;"
       }[char]));
+    }
+
+    function formatError(message) {
+      if (/quota exceeded|limit:\s*0|rate-limits/i.test(message)) {
+        return "Gemini API 額度目前不可用。請到 Google AI Studio 或 Google Cloud 檢查這把 API key 的額度、計費或專案啟用狀態。";
+      }
+      if (/API key not valid|invalid api key/i.test(message)) {
+        return "Gemini API key 無效，請確認 Apps Script 指令碼屬性的 GEMINI_KEY 是否貼上完整且正確的 key。";
+      }
+      return message;
     }
 
     transcript.addEventListener("input", updateStats);
