@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>能源效率與 ISO 50001：電影海報式論文簡報</title>
+  <style>
+    :root {
+      --ink: #f7fbff;
+      --muted: #b8c4c8;
+      --coal: #071012;
+      --steel: #132328;
+      --teal: #00d5c8;
+      --amber: #f4a72f;
+      --line: rgba(255, 255, 255, .18);
+      --shadow: rgba(0, 0, 0, .55);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background: var(--coal);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0, 213, 200, .18), transparent 30%),
+        radial-gradient(circle at 82% 25%, rgba(244, 167, 47, .13), transparent 28%),
+        #071012;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 4vw, 58px);
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.015);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .poster {
+      position: relative;
+      width: min(100%, 1280px);
+      height: min(100%, 720px);
+      min-height: 560px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(13, 32, 38, .96), rgba(6, 12, 14, .98));
+      box-shadow: 0 32px 80px var(--shadow);
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(3, 8, 10, .95) 0%, rgba(3, 8, 10, .62) 44%, rgba(3, 8, 10, .15) 100%),
+        linear-gradient(0deg, rgba(2, 7, 8, .95) 0%, transparent 42%),
+        url("poster-energy-seafood.png") center / cover no-repeat;
+      filter: saturate(1.08) contrast(1.05);
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, black, transparent 75%);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 5vw, 64px);
+    }
+
+    .eyebrow {
+      width: fit-content;
+      border: 1px solid rgba(0, 213, 200, .55);
+      padding: 8px 12px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: rgba(0, 213, 200, .08);
+    }
+
+    h1, h2 {
+      max-width: 780px;
+      margin: 0;
+      line-height: .94;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      text-shadow: 0 16px 36px rgba(0, 0, 0, .55);
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 108px);
+      font-weight: 950;
+    }
+
+    h2 {
+      font-size: clamp(42px, 6.8vw, 86px);
+      font-weight: 950;
+    }
+
+    .title-zh {
+      display: block;
+      margin-top: 16px;
+      color: #ffffff;
+      font-size: clamp(23px, 3vw, 42px);
+      line-height: 1.18;
+      text-transform: none;
+      font-weight: 850;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 24px);
+      line-height: 1.58;
+      text-shadow: 0 10px 24px rgba(0, 0, 0, .6);
+    }
+
+    .billing {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 980px;
+      margin-top: 28px;
+    }
+
+    .metric, .card, .step {
+      border: 1px solid var(--line);
+      background: rgba(8, 20, 24, .72);
+      backdrop-filter: blur(16px);
+      border-radius: 8px;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, .32);
+    }
+
+    .metric {
+      min-height: 126px;
+      padding: 18px;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--amber);
+      font-size: clamp(29px, 4vw, 52px);
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+      max-width: 1000px;
+    }
+
+    .card {
+      min-height: 190px;
+      padding: 22px;
+    }
+
+    .card b, .step b {
+      display: block;
+      color: #ffffff;
+      font-size: 21px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .card p, .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 960px;
+      margin-top: 28px;
+    }
+
+    .step {
+      min-height: 106px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--teal);
+    }
+
+    .finale {
+      max-width: 920px;
+      padding: clamp(28px, 5vw, 56px);
+      border: 1px solid rgba(244, 167, 47, .42);
+      background: linear-gradient(135deg, rgba(244, 167, 47, .13), rgba(0, 213, 200, .08));
+      backdrop-filter: blur(18px);
+      border-radius: 8px;
+    }
+
+    .source {
+      color: rgba(247, 251, 255, .72);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 780px;
+    }
+
+    .nav {
+      position: fixed;
+      z-index: 4;
+      right: 24px;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav button {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 999px;
+      background: rgba(8, 20, 24, .82);
+      cursor: pointer;
+    }
+
+    .nav button:hover {
+      border-color: rgba(0, 213, 200, .8);
+      color: var(--teal);
+    }
+
+    .count {
+      min-width: 72px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    .progress {
+      position: fixed;
+      z-index: 4;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .bar {
+      height: 100%;
+      width: 16.66%;
+      background: linear-gradient(90deg, var(--teal), var(--amber));
+      transition: width .35s ease;
+    }
+
+    @media (max-width: 820px) {
+      body { overflow: auto; }
+      .deck { min-height: 100vh; height: auto; }
+      .slide {
+        position: relative;
+        min-height: 100vh;
+        display: none;
+        padding: 14px;
+      }
+      .slide.active { display: grid; }
+      .poster {
+        height: auto;
+        min-height: calc(100vh - 28px);
+      }
+      .content { padding: 24px; gap: 28px; }
+      .billing, .grid, .steps { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(44px, 15vw, 68px); }
+      h2 { font-size: clamp(38px, 13vw, 58px); }
+      .nav { right: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide active">
+      <article class="poster">
+        <div class="content">
+          <div>
+            <div class="eyebrow">Cleaner Energy Systems 2025 | ISO 50001:2018</div>
+            <h1>
+              Cold Chain<br />Hot Cost
+              <span class="title-zh">水產加工業的能源效率決戰</span>
+            </h1>
+            <p class="lead">以 Kerala 水產加工產業為場景，論文把「能源費用」從背景成本推到主角位置：每一度電都會變成競爭力、碳壓力與營運韌性的劇情轉折。</p>
+          </div>
+          <p class="source">Based on: Stephen & Valsalan, "Energy efficiency and ISO 50001:2018 implementation in seafood processing industries", Cleaner Energy Systems, 2025.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide">
+      <article class="poster">
+        <div class="content">
+          <div>
+            <div class="eyebrow">The Evidence</div>
+            <h2>Energy Is<br />The Plot</h2>
+            <p class="lead">研究用 SEC 模型、相關與迴歸分析，揭開產量、用電與成本之間幾乎同步的關係。對工廠來說，節能不是附加題，而是損益表的主線。</p>
+            <div class="billing">
+              <div class="metric"><strong>159.2</strong><span>平均 SEC<br />kWh/MT</span></div>
+              <div class="metric"><strong>965.9</strong><span>平均單位能源成本<br />INR/MT</span></div>
+              <div class="metric"><strong>0.992</strong><span>能源消耗與能源成本高度相關</span></div>
+              <div class="metric"><strong>12</strong><span>月度生產、用電與成本資料分析</span></div>
+            </div>
+          </div>
+          <p class="source">Key reported values: SEC mean 159.2192 kWh/MT; energy cost per unit mean 965.9242 INR/MT; correlation between energy consumption and energy cost 0.992.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide">
+      <article class="poster">
+        <div class="content">
+          <div>
+            <div class="eyebrow">Market Pain</div>
+            <h2>The Enemy<br />Is Waste</h2>
+            <p class="lead">冷凍、冷藏、加工與水資源使用交織成高耗能系統。當能源價格波動、法規趨嚴、客戶要求低碳供應鏈，沒有管理系統的工廠會被成本拖住。</p>
+            <div class="grid">
+              <div class="card"><b>能源成本上升</b><p>用電量變動會迅速反映在能源支出，壓縮毛利與報價彈性。</p></div>
+              <div class="card"><b>冷鏈是關鍵熱區</b><p>冷凍與冷藏設備是水產加工的高耗能流程，適合優先監測與改善。</p></div>
+              <div class="card"><b>永續要求變成門票</b><p>節能、減碳、節水與減少食物浪費，逐漸成為市場准入條件。</p></div>
+            </div>
+          </div>
+          <p class="source">The paper highlights rising energy costs, stricter environmental laws, refrigeration intensity, and resource optimization needs in seafood processing.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide">
+      <article class="poster">
+        <div class="content">
+          <div>
+            <div class="eyebrow">The Framework</div>
+            <h2>ISO 50001<br />Meets FEW</h2>
+            <p class="lead">論文主張將 ISO 50001:2018 與 Food-Energy-Water Nexus 整合，不只管電，也同步管理水、物料流與食物浪費，讓能源管理成為全廠資源優化系統。</p>
+            <div class="steps">
+              <div class="step"><b>1. Commitment</b><p>高階承諾、跨部門小組、統一永續願景。</p></div>
+              <div class="step"><b>2. Energy Review</b><p>建立能源、水與物料基線，鎖定冷凍等高耗能流程。</p></div>
+              <div class="step"><b>3. EnMS Design</b><p>設計 KPI：kWh/ton、水使用效率、廢棄物回收率。</p></div>
+              <div class="step"><b>4. Implementation</b><p>導入高效率設備、熱回收、節水與副產品再利用。</p></div>
+              <div class="step"><b>5. Monitoring</b><p>智慧電表與儀表板，讓異常趨勢可視化。</p></div>
+              <div class="step"><b>6. Review</b><p>根因分析、矯正措施與管理審查，形成持續改善。</p></div>
+            </div>
+          </div>
+          <p class="source">Adapted from the paper's Table 7 framework for integrating ISO 50001:2018 with the Food-Energy-Water Nexus.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide">
+      <article class="poster">
+        <div class="content">
+          <div>
+            <div class="eyebrow">Marketing Angle</div>
+            <h2>From Audit<br />To Advantage</h2>
+            <p class="lead">對顧問、企業或政府專案來說，這篇論文可以包裝成一個很清楚的銷售訊息：先用 SEC 找到能源熱點，再用 ISO 50001 把改善制度化，最後用 FEW Nexus 擴大成 ESG 競爭力。</p>
+            <div class="grid">
+              <div class="card"><b>診斷</b><p>用 SEC 與月度資料找出耗能波動、成本壓力與流程瓶頸。</p></div>
+              <div class="card"><b>建制</b><p>用 ISO 50001 建立政策、目標、監測、矯正與管理審查。</p></div>
+              <div class="card"><b>擴散</b><p>把節能效益延伸到節水、減廢、碳揭露與供應鏈信任。</p></div>
+            </div>
+          </div>
+          <p class="source">Suggested positioning: "Energy management is not compliance paperwork. It is a cost-control and sustainability operating system."</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide">
+      <article class="poster">
+        <div class="content">
+          <div class="finale">
+            <div class="eyebrow">Final Scene</div>
+            <h2>Measure.<br />Manage.<br />Monetize.</h2>
+            <p class="lead">這份研究的商業啟示很直接：水產加工業若能把能源數據轉成管理決策，就能同時降低成本、提升永續績效，並把 ISO 50001 從證書變成競爭優勢。</p>
+            <div class="billing">
+              <div class="metric"><strong>SEC</strong><span>找出每噸產品的能源真相</span></div>
+              <div class="metric"><strong>EnMS</strong><span>把改善變成制度，而非一次性專案</span></div>
+              <div class="metric"><strong>FEW</strong><span>能源、水與食物浪費一起優化</span></div>
+              <div class="metric"><strong>ESG</strong><span>把營運改善轉成市場信任</span></div>
+            </div>
+          </div>
+          <p class="source">Use arrow keys, on-screen buttons, or tap controls to present.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="nav" aria-label="投影片導覽">
+    <button type="button" id="prev" aria-label="上一頁">‹</button>
+    <div class="count"><span id="current">01</span> / <span id="total">06</span></div>
+    <button type="button" id="next" aria-label="下一頁">›</button>
+  </nav>
+  <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const current = document.getElementById("current");
+    const total = document.getElementById("total");
+    const bar = document.getElementById("bar");
+    let index = 0;
+
+    total.textContent = String(slides.length).padStart(2, "0");
+
+    function show(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      current.textContent = String(index + 1).padStart(2, "0");
+      bar.style.width = `${((index + 1) / slides.length) * 100}%`;
+    }
+
+    document.getElementById("prev").addEventListener("click", () => show(index - 1));
+    document.getElementById("next").addEventListener("click", () => show(index + 1));
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") show(index + 1);
+      if (event.key === "ArrowLeft" || event.key === "PageUp") show(index - 1);
+      if (event.key === "Home") show(0);
+      if (event.key === "End") show(slides.length - 1);
+    });
+
+    let touchStartX = 0;
+    window.addEventListener("touchstart", event => {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+    window.addEventListener("touchend", event => {
+      const delta = event.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(delta) > 50) show(index + (delta < 0 ? 1 : -1));
+    }, { passive: true });
+
+    show(0);
+  </script>
+</body>
+</html>
