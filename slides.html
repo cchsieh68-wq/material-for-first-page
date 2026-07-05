@@ -390,6 +390,30 @@
       transition: width .3s ease;
     }
 
+    .home-link {
+      position: fixed;
+      z-index: 7;
+      left: 22px;
+      top: 20px;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(16, 32, 29, .84);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      backdrop-filter: blur(14px);
+    }
+
+    .home-link:hover {
+      color: var(--green);
+      border-color: rgba(56,224,123,.75);
+    }
+
     @media (max-width: 840px) {
       body { overflow: auto; }
       .deck { min-height: 100vh; height: auto; }
@@ -413,10 +437,12 @@
       .loop:nth-child(2) { right: 18px; top: 180px; }
       .loop:nth-child(4) { left: 18px; top: 180px; }
       .target { position: static; width: auto; max-width: none; margin-top: 20px; }
+      .home-link { left: 14px; top: 14px; }
     }
   </style>
 </head>
 <body>
+  <a class="home-link" href="index.html">整合首頁</a>
   <main class="deck" aria-live="polite">
     <section class="slide active">
       <article class="canvas">

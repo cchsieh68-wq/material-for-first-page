@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve Hsieh｜ESG 永續能源顧問公司官網</title>
+  <meta name="description" content="Steve Hsieh ESG 永續能源顧問，提供 ISO 50001、碳盤查、能源管理、供應鏈減碳與 AI 永續轉型服務。" />
+  <style>
+    :root {
+      --ink: #17201d;
+      --muted: #607069;
+      --paper: #f7f5ef;
+      --panel: #ffffff;
+      --line: rgba(23, 32, 29, .14);
+      --green: #167a59;
+      --blue: #235fb8;
+      --teal: #1a9a9a;
+      --gold: #b9822a;
+      --shadow: 0 22px 58px rgba(23, 32, 29, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(22, 122, 89, .12), transparent 34%),
+        linear-gradient(225deg, rgba(35, 95, 184, .10), transparent 40%),
+        var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 245, 239, .88);
+      backdrop-filter: blur(18px);
+    }
+    .bar {
+      width: min(1180px, calc(100% - 36px));
+      min-height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand strong {
+      display: block;
+      font-size: 19px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .brand span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .quick-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .quick-nav a {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+    }
+    .quick-nav a:hover {
+      color: var(--ink);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, .72);
+    }
+
+    main { overflow: hidden; }
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      gap: 52px;
+      align-items: center;
+      padding: 58px 0 48px;
+    }
+    .eyebrow {
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid rgba(22, 122, 89, .28);
+      border-radius: 8px;
+      color: var(--green);
+      background: rgba(22, 122, 89, .08);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 20px 0 0;
+      max-width: 760px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.75;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      font-weight: 900;
+      box-shadow: 0 10px 26px rgba(23, 32, 29, .08);
+    }
+    .button.primary {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+    }
+    .hero-media {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .portrait {
+      height: min(610px, 66vh);
+      min-height: 420px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #e8ece9;
+      box-shadow: var(--shadow);
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 24%;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .metric {
+      min-height: 102px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+    }
+    .metric b {
+      display: block;
+      color: var(--blue);
+      font-size: 26px;
+      line-height: 1;
+    }
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 78px 0;
+      border-top: 1px solid var(--line);
+    }
+    .section.alt {
+      background: rgba(255, 255, 255, .42);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: .72fr 1fr;
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .section-label {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .service,
+    .case,
+    .resource {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: 0 14px 34px rgba(23, 32, 29, .07);
+    }
+    .service small,
+    .resource small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .service h3,
+    .case h3,
+    .resource h3 {
+      margin: 12px 0 0;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+    .service p,
+    .case p,
+    .resource p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+    .service:nth-child(2) h3 { color: var(--blue); }
+    .service:nth-child(3) h3 { color: var(--gold); }
+    .service:nth-child(5) h3 { color: var(--teal); }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+    .step {
+      min-height: 210px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+    .step:last-child { border-right: 0; }
+    .step b {
+      color: var(--green);
+      font-size: 14px;
+      letter-spacing: .12em;
+    }
+    .step h3 {
+      margin: 18px 0 10px;
+      font-size: 22px;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    .proof-band {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .proof-copy {
+      padding: 30px;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(135deg, #17342d, #17305f);
+    }
+    .proof-copy p {
+      color: rgba(255, 255, 255, .78);
+      line-height: 1.78;
+    }
+    .client-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .client-list span {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .resource {
+      min-height: 232px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .68)),
+        var(--tone);
+    }
+    .resource.consultant { --tone: linear-gradient(135deg, rgba(35, 95, 184, .18), rgba(22, 122, 89, .12)); }
+    .resource.poster { --tone: linear-gradient(135deg, rgba(26, 154, 154, .20), rgba(185, 130, 42, .16)); }
+    .resource.paper { --tone: linear-gradient(135deg, rgba(22, 122, 89, .18), rgba(35, 95, 184, .13)); }
+
+    .contact {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 36px;
+      align-items: center;
+      padding: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .contact p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 940px) {
+      .bar {
+        min-height: auto;
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .quick-nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 3px;
+      }
+      .hero,
+      .section-head,
+      .proof-band,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      .hero { min-height: auto; padding-top: 38px; }
+      .portrait { height: auto; min-height: auto; aspect-ratio: 4 / 5; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .process { grid-template-columns: 1fr; }
+      .step { border-right: 0; border-bottom: 1px solid var(--line); }
+      .step:last-child { border-bottom: 0; }
+      .contact-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .metrics { grid-template-columns: 1fr; }
+      .client-list { grid-template-columns: 1fr; }
+      .contact { padding: 24px; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="回到首頁">
+        <strong>Steve Hsieh</strong>
+        <span>ESG & Energy Consulting</span>
+      </a>
+      <nav class="quick-nav" aria-label="主要導覽">
+        <a href="#services">服務</a>
+        <a href="#process">方法</a>
+        <a href="#clients">實績</a>
+        <a href="#resources">資源</a>
+        <a href="#contact">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <div class="eyebrow">ESG · Energy · Net Zero</div>
+        <h1>讓永續轉型，成為企業可以落地的管理能力。</h1>
+        <p class="lead">
+          從 ISO 50001 能源管理、碳盤查、供應鏈減碳到 AI 能源數據分析，協助企業把 ESG 壓力整理成清楚路徑、制度與可追蹤的改善成果。
+        </p>
+        <div class="actions">
+          <a class="button primary" href="mailto:cchsieh68@gmail.com">預約顧問諮詢</a>
+          <a class="button" href="#services">查看服務項目</a>
+        </div>
+      </div>
+
+      <div class="hero-media" aria-label="顧問形象與服務數據">
+        <figure class="portrait">
+          <img src="profile-sgs.jpg" alt="Steve Hsieh ESG 永續能源顧問形象照" />
+        </figure>
+        <div class="metrics">
+          <div class="metric"><b>30+</b><span>年永續能源與管理經驗</span></div>
+          <div class="metric"><b>200+</b><span>企業輔導、訓練與稽核</span></div>
+          <div class="metric"><b>AI</b><span>能源效率與永續數據應用</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Services</p>
+            <h2>把複雜的法規、能源與碳管理，拆成可執行方案。</h2>
+          </div>
+          <p>
+            官網設計聚焦企業決策者最在意的三件事：能不能符合法規與客戶要求、能不能量化節能減碳成果、能不能讓內部團隊持續運作。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service">
+            <div>
+              <small>Energy System</small>
+              <h3>ISO 50001 能源管理</h3>
+              <p>能源審查、基線建立、績效指標、內稽訓練與系統導入，讓節能不只停留在專案。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Carbon Management</small>
+              <h3>碳盤查與揭露</h3>
+              <p>協助盤查邊界、排放源、活動數據與佐證資料整理，支援企業回應供應鏈與 ESG 揭露需求。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Supply Chain</small>
+              <h3>供應鏈減碳策略</h3>
+              <p>針對客戶稽核、碳費、減碳承諾與採購要求，建立分階段減碳路線與內部治理節奏。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>AI Analytics</small>
+              <h3>AI 能源效率分析</h3>
+              <p>將能源資料、設備行為與營運情境連接，找出異常耗能、改善優先序與量測驗證依據。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Training</small>
+              <h3>企業內訓與工作坊</h3>
+              <p>為管理層、廠務、品保與永續團隊設計實務課程，讓知識能回到現場流程。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Governance</small>
+              <h3>ESG 治理制度</h3>
+              <p>整理角色分工、年度目標、資料流程與管理審查，形成可稽核、可追蹤的永續管理架構。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Method</p>
+            <h2>從現況診斷到制度落地，每一步都能被管理。</h2>
+          </div>
+          <p>
+            導入流程不以簡報結束，而是建立企業能長期維護的資料、會議、改善與驗證節奏。
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <b>01</b>
+            <h3>診斷現況</h3>
+            <p>盤點能源使用、碳資料、法規與客戶要求，釐清風險與改善空間。</p>
+          </article>
+          <article class="step">
+            <b>02</b>
+            <h3>設計路線</h3>
+            <p>定義目標、責任分工、時程與關鍵指標，讓決策與執行對齊。</p>
+          </article>
+          <article class="step">
+            <b>03</b>
+            <h3>建置制度</h3>
+            <p>建立文件、數據流程、內部稽核與改善機制，銜接 ISO 與 ESG 治理。</p>
+          </article>
+          <article class="step">
+            <b>04</b>
+            <h3>追蹤成果</h3>
+            <p>用量測驗證與管理審查確認節能、減碳與組織能力是否持續進步。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="clients">
+      <div class="container proof-band">
+        <div class="proof-copy">
+          <p class="section-label">Experience</p>
+          <h2>服務半導體、電子製造、工程、醫療與高科技供應鏈。</h2>
+          <p>
+            以稽核、輔導與訓練經驗連接企業現場，協助不同產業把能源效率與永續治理放進日常管理。
+          </p>
+        </div>
+        <div class="client-list" aria-label="客戶與產業經驗">
+          <span>台積電</span>
+          <span>聯電</span>
+          <span>日月光</span>
+          <span>友達光電</span>
+          <span>聯發科</span>
+          <span>中鼎工程</span>
+          <span>中國鋼鐵</span>
+          <span>電子供應鏈</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Resources</p>
+            <h2>延伸內容與展示頁面。</h2>
+          </div>
+          <p>
+            保留原本製作好的顧問頁、電影海報式簡報與論文重點簡報，讓官網同時具備品牌、展示與教學資源入口。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <a class="resource consultant" href="consultant.html">
+            <div>
+              <small>Profile Site</small>
+              <h3>顧問形象頁</h3>
+              <p>完整個人品牌、服務說明、客戶經驗與聯絡資訊。</p>
+            </div>
+            <span class="button">開啟頁面</span>
+          </a>
+          <a class="resource poster" href="ppt.html">
+            <div>
+              <small>Presentation</small>
+              <h3>能源效率簡報</h3>
+              <p>以電影海報式視覺呈現 ISO 50001 與能源管理重點。</p>
+            </div>
+            <span class="button">開啟頁面</span>
+          </a>
+          <a class="resource paper" href="slides.html">
+            <div>
+              <small>Research Notes</small>
+              <h3>論文重點簡報</h3>
+              <p>整理 ISO 50001、節能與 CO2 減量研究架構。</p>
+            </div>
+            <span class="button">開啟頁面</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>開始規劃企業的永續能源轉型。</h2>
+          <p>
+            適合正在面對 ISO 50001、碳盤查、供應鏈減碳、ESG 揭露或 AI 能源管理需求的企業團隊。
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:cchsieh68@gmail.com">cchsieh68@gmail.com</a>
+          <a class="button" href="consultant.html#contact">查看完整介紹</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Steve Hsieh ESG & Energy Consulting. Sustainable Energy · ESG · ISO 50001 · AI Analytics
+  </footer>
+</body>
+</html>
