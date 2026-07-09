@@ -43,7 +43,7 @@
     }
     .bar {
       width: min(1180px, calc(100% - 36px));
-      min-height: 74px;
+      min-height: 88px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -52,15 +52,17 @@
     }
     .brand strong {
       display: block;
-      font-size: 19px;
-      letter-spacing: .08em;
+      font-size: 27px;
+      line-height: 1.2;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
     .brand span {
       display: block;
-      margin-top: 4px;
+      margin-top: 6px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 17px;
+      line-height: 1.25;
     }
     .quick-nav {
       display: flex;
@@ -427,6 +429,8 @@
     }
 
     @media (max-width: 560px) {
+      .brand strong { font-size: 23px; }
+      .brand span { font-size: 15px; }
       .metrics { grid-template-columns: 1fr; }
       .client-list { grid-template-columns: 1fr; }
       .contact { padding: 24px; }
