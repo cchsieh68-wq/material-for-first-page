@@ -155,8 +155,11 @@
       gap: 14px;
     }
     .portrait {
-      height: min(610px, 66vh);
-      min-height: 420px;
+      width: 76%;
+      max-width: 390px;
+      height: min(480px, 54vh);
+      min-height: 340px;
+      justify-self: center;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -420,7 +423,12 @@
         grid-template-columns: 1fr;
       }
       .hero { min-height: auto; padding-top: 38px; }
-      .portrait { height: auto; min-height: auto; aspect-ratio: 4 / 5; }
+      .portrait {
+        width: min(72%, 340px);
+        height: auto;
+        min-height: auto;
+        aspect-ratio: 4 / 5;
+      }
       .grid-3 { grid-template-columns: 1fr; }
       .process { grid-template-columns: 1fr; }
       .step { border-right: 0; border-bottom: 1px solid var(--line); }
