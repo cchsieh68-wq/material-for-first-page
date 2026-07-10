@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>實績與經驗｜博誠永續科技有限公司</title>
+  <meta name="description" content="博誠永續科技有限公司輔導、訓練與量測驗證實績，以及顧問師曾參與驗證或查證之產業經驗。" />
+  <style>
+    :root {
+      --ink: #17201d;
+      --muted: #607069;
+      --paper: #f7f5ef;
+      --panel: #ffffff;
+      --line: rgba(23, 32, 29, .14);
+      --green: #167a59;
+      --blue: #235fb8;
+      --shadow: 0 18px 44px rgba(23, 32, 29, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 245, 239, .9);
+      backdrop-filter: blur(18px);
+    }
+    .bar,
+    .container {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .bar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand strong {
+      display: block;
+      font-size: 23px;
+      line-height: 1.2;
+    }
+    .brand span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav {
+      display: flex;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .nav a,
+    .button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .72);
+      font-weight: 800;
+    }
+    .button.primary {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+    }
+    main { padding: 58px 0 82px; }
+    .hero {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+    .label {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.08;
+    }
+    .hero p,
+    .intro,
+    .note,
+    .item span {
+      color: var(--muted);
+      line-height: 1.72;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 0;
+    }
+    section {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.18;
+    }
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.28;
+    }
+    .panel {
+      margin-top: 18px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: var(--shadow);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .item {
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 239, .76);
+    }
+    .item b {
+      display: block;
+      color: var(--blue);
+      font-size: 16px;
+      line-height: 1.36;
+    }
+    .item span {
+      display: block;
+      margin-top: 9px;
+      font-size: 14px;
+    }
+    .details-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .details-nav a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .78);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .advisor-details {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .standard-detail {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .82);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .standard-detail summary {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 22px;
+      font-weight: 900;
+      list-style: none;
+    }
+    .standard-detail summary::-webkit-details-marker { display: none; }
+    .standard-detail summary span {
+      color: var(--ink);
+      font-size: 21px;
+      line-height: 1.28;
+    }
+    .standard-detail summary small {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 22px 22px;
+    }
+    .category-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 239, .76);
+    }
+    .category-card h3 {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0;
+      color: var(--blue);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+    .category-card h3 span {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .category-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+    .disclaimer {
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 4px solid var(--green);
+      background: rgba(22, 122, 89, .08);
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      padding: 26px 0;
+      font-size: 14px;
+    }
+    @media (max-width: 860px) {
+      .bar,
+      .hero {
+        align-items: flex-start;
+        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+      .nav { overflow-x: auto; width: 100%; padding-bottom: 3px; }
+      .grid,`r`n      .grid.three,`r`n      .category-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html">
+        <strong>博誠永續科技有限公司</strong>
+        <span>SunTech Sustainibility</span>
+      </a>
+      <nav class="nav" aria-label="實績頁導覽">
+        <a href="index.html">首頁</a>
+        <a href="#company-achievements">公司實績</a>
+        <a href="#advisor-experience">顧問師參與經驗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div>
+        <p class="label">Achievements</p>
+        <h1>實績與產業經驗</h1>
+      </div>
+      <div>
+        <p class="intro">
+          本頁整理博誠永續科技之輔導、訓練與量測驗證實績，以及顧問師曾參與驗證或查證之產業經驗。資訊呈現以服務角色區分，協助企業清楚了解可提供的專業支持。
+        </p>
+        <div class="tabs">
+          <a class="button primary" href="#company-achievements">公司輔導實績</a>
+          <a class="button" href="#advisor-experience">顧問師參與經驗</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="company-achievements">
+      <p class="label">Company Achievements</p>
+      <h2>公司輔導、訓練與量測驗證實績</h2>
+      <div class="panel">
+        <div class="grid">
+          <div class="item">
+            <b>ISO 50001 能源管理系統輔導</b>
+            <span>聯發科、漢磊科技、嘉晶科技、正文科技、遠東金士頓、中鼎工程</span>
+          </div>
+          <div class="item">
+            <b>ISO 46001 水資源效率管理系統輔導</b>
+            <span>力成科技</span>
+          </div>
+          <div class="item">
+            <b>ISO 14064-1 溫室氣體盤查輔導</b>
+            <span>台東天主教聖母醫院</span>
+          </div>
+          <div class="item">
+            <b>節能量量測與驗證</b>
+            <span>金像電子</span>
+          </div>
+          <div class="item">
+            <b>ISO 50001 內部稽核訓練</b>
+            <span>可寧衛</span>
+          </div>
+          <div class="item">
+            <b>IECQ QC080000 內部稽核訓練</b>
+            <span>強茂股份有限公司</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advisor-experience">
+      <p class="label">Advisor Experience</p>
+      <h2>顧問師曾參與驗證或查證實績</h2>
+      <div class="disclaimer">
+        下列為顧問師過往曾參與驗證或查證之產業經驗彙整，作為專業背景與產業熟悉度說明，非表示皆為博誠永續科技直接執行之驗證或查證案件。
+      </div>
+      <div class="details-nav" aria-label="標準別快速導覽">
+        <a href="#iso50001">ISO 50001 驗證參與經驗</a>
+        <a href="#iso14064">ISO 14064-1 查證參與經驗</a>
+        <a href="#sra">永續報告書查證參與經驗</a>
+        <a href="#iso46001">ISO 46001 驗證參與經驗</a>
+        <a href="#qc080000">IECQ QC080000 驗證參與經驗</a>
+        <a href="#iso14001-45001">ISO 14001 / ISO 45001 驗證參與經驗</a>
+      </div>
+      <div class="advisor-details">
+        <details class="standard-detail" id="iso50001" open>
+          <summary>
+            <span>ISO 50001 驗證參與經驗</span>
+            <small>製造業 174 筆、服務業 117 筆</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>半導體 / IC / 封測 / 晶圓材料<span>21 筆</span></h3>
+              <p>日月光中壢廠、日月光高雄廠、力成、世界先進、世界先進一廠、台積電、台灣凸版、台灣默克、合晶光電、艾克爾國際T1、艾克爾國際T5、艾克爾龍科廠、京元電、矽品、南茂科技、國聯矽業、華泰電子、默克、環球晶、聯發科、聯電</p>
+            </article>
+            <article class="category-card">
+              <h3>電子 / 電腦 / 光電 / PCB<span>35 筆</span></h3>
+              <p>友達光電、中華映管、中強光電、中德電子、元太科技、光寶、光寶新竹廠、宏碁電腦、定穎電子、朋程科技、欣興山鶯二廠、欣興合江廠、欣興電子、欣興電子大園廠、迎廣科技、金像電子、研華、致伸、英業達桃園廠、英業達士林廠、英業達大溪電腦廠、泰洛斯、神基、康舒、創為、創維、勝宏、楠梓電、群浤科技、達方台南廠、熒茂光學股、緯創、衛普、聯茂、耀華</p>
+            </article>
+            <article class="category-card">
+              <h3>鋼鐵 / 金屬 / 電線電纜<span>14 筆</span></h3>
+              <p>三星科技、大同電線電纜、大同鋁業、大亞電線、中國砂輪、中鋼、中鋼構、盛餘鋼鐵、勤美、新光鋼鐵、精金科技、橋椿金屬、燁輝、豐祥金屬</p>
+            </article>
+            <article class="category-card">
+              <h3>化工 / 材料 / 塑橡膠<span>30 筆</span></h3>
+              <p>大立高分子、中碳、台肥、台氯、台達化學、台橡、台灣朗盛、台灣氯乙烯、台灣聚合、台灣德聯、生木科技、立凱、李長榮化工、李長榮科技、李長榮高雄廠、李長榮儲運、亞東石化、東聯化學、長泓膠業、長興化工、長興材料、南亞、南寶、昶昕、科德寶、康普材料、義芳化學、僑力化工、德淵、聯成化學</p>
+            </article>
+            <article class="category-card">
+              <h3>機械 / 設備 / 交通 / 其他製造<span>16 筆</span></h3>
+              <p>大同三峽廠、大同重電廠、史谷脫大園廠、巨大、東培、彬騰企業、富士全錄、富泰空調、復盛、瑞助營造、漢翔、歐萊德、震旦行、曄拓保養品、樹德、聯友電機</p>
+            </article>
+            <article class="category-card">
+              <h3>其他製造 / 待確認<span>21 筆</span></h3>
+              <p>大東電業、台灣特格、台灣通用、宏聚、岱稜、金亞洲、信通交通、屏東加工出口區、昭萬工業、科工館、紘洋、崑洲&amp;奇倉、喜美包裝、琮實、順捷、匯得利、遠龍、億鴻系統、興光工業、聯華中壢廠、鴻海精密第三廠</p>
+            </article>
+            <article class="category-card">
+              <h3>能源 / 氣體 / 資源再生<span>11 筆</span></h3>
+              <p>大潭電廠、台中電廠、台電大甲溪發電廠、台電大潭電廠、台電興達電廠、亞太資源、南科資源再生中心、南部電廠、綠山水、聯華氣體樹谷廠、聯華氣體觀音廠</p>
+            </article>
+            <article class="category-card">
+              <h3>水泥 / 建材 / 玻璃陶瓷<span>8 筆</span></h3>
+              <p>台泥和平廠、台泥花蓮廠、台泥蘇澳廠、亞洲水泥、冠軍磁磚、春池玻璃、圓益石英、嘉新水泥</p>
+            </article>
+            <article class="category-card">
+              <h3>食品 / 生技 / 消費品<span>9 筆</span></h3>
+              <p>味全斗六、味全台中、味全高雄、金百利中壢廠、長榮空廚、統一、黑松、葡萄王、鼎耀食品</p>
+            </article>
+            <article class="category-card">
+              <h3>紡織 / 成衣 / 染整<span>9 筆</span></h3>
+              <p>和友紡織、尚益染整、南緯實業、裕源紡織、福懋、聚隆、遠東新世紀、儒鴻、興采實業</p>
+            </article>
+            <article class="category-card">
+              <h3>政府 / 法人 / 研究機構<span>8 筆</span></h3>
+              <p>SGS 菲律賓、中研院地球所、生物技術開發中心、佛佗紀念館、故宮博物院、財團法人生物技術開發中心、財團法人國家同步輻射研究中心、儀科中心</p>
+            </article>
+            <article class="category-card">
+              <h3>醫療 / 生技 / 公衛<span>22 筆</span></h3>
+              <p>三軍總醫院、小港醫院、中國醫_新竹院區、中國醫藥大學附設醫院、台中慈濟、台安、成大醫院、行天宮恩主公醫院、秀傳醫院、長庚醫院、恩主公醫院、馬階醫院(台東)、高雄長庚醫院、高雄國軍醫院、高醫、國軍台中醫院、國衛院、聖保祿醫院、萬芳醫院、嘉義基督教醫院、衛福部、羅東博愛醫院</p>
+            </article>
+            <article class="category-card">
+              <h3>商業服務 / 物業 / 工程 / 其他服務<span>10 筆</span></h3>
+              <p>士瑞克、中欣工程行、中興保全、台灣富士全錄、台灣新光保全、外協南港展覽館、外協展覽大樓、宏碁、群光電子、億鴻</p>
+            </article>
+            <article class="category-card">
+              <h3>能源 / 公用事業 / 環境工程<span>11 筆</span></h3>
+              <p>大台北瓦斯、大觀電廠、山林水、台南資源再生中心、台電花蓮營業處、和平電廠、林口火力電廠、南科環工中心、南部電廠、森霸電廠、嘉惠電力</p>
+            </article>
+            <article class="category-card">
+              <h3>學校 / 大專院校<span>15 筆</span></h3>
+              <p>大葉、中央大學、元智大學、北科大、台科大、交通大學、佛光大學、宏國德霖、亞東科技大學、南華大學、淡江大學、逢甲大學、朝陽大學、聖約翰大學、實踐大學</p>
+            </article>
+            <article class="category-card">
+              <h3>零售 / 百貨 / 通路 / 餐飲<span>9 筆</span></h3>
+              <p>大潤發、太平洋崇光佰貨、安心食品、統一阪急、統一超商、超商、新光三越、遠東巨城、遠東百貨</p>
+            </article>
+            <article class="category-card">
+              <h3>金融 / 保險 / 證券<span>24 筆</span></h3>
+              <p>台灣中小企業銀行、中國信託、台灣中小企業銀行、玉山銀行、兆豐金控、兆豐票券、兆豐銀行、兆豐證券、南山人壽、星展銀行、國泰人壽、國泰世華、國泰金控、第一金人壽、第一金投資、第一金融資產、第一金證券、第一銀行、凱基證券、華南銀行、新光人壽、彰化銀行、遠雄人壽、聯邦銀行</p>
+            </article>
+            <article class="category-card">
+              <h3>電信 / 資通訊 / 郵政 / 貿易服務<span>7 筆</span></h3>
+              <p>中華民國對外貿易發展協會、中華郵政、台灣大哥大、台灣固網、東森國際、國家高速網路、對外貿易發展協會</p>
+            </article>
+            <article class="category-card">
+              <h3>旅館 / 觀光 / 餐旅<span>8 筆</span></h3>
+              <p>天成飯店、日月潭雲品酒店、台中長榮桂冠飯店、君品酒店、美麗信、凱裕商旅、尊爵大飯店、萬怡</p>
+            </article>
+          </div>
+        </details>
+        <details class="standard-detail" id="iso14064" open>
+          <summary>
+            <span>ISO 14064-1 查證參與經驗</span>
+            <small>58 筆客戶名稱</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>製造業 - 鋼鐵 / 金屬 / 機械 / 電機<span>2 筆</span></h3>
+              <p>中國砂輪、羅東鋼鐵廠</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 電子 / 電腦 / 光電 / PCB / 零組件<span>18 筆</span></h3>
+              <p>中華映管、仁寶電腦、元太科技川奇光電、台達電子、台灣通用器材、安勤、欣興、欣興電子、信昌電子、科盛德、致伸、康舒、統寶光電、博智電子、晶碩光學、緯創、燿華電子、譁裕實業</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 水泥 / 建材 / 玻璃 / 紙業 / 包裝<span>3 筆</span></h3>
+              <p>中華紙漿、正隆大園廠、榮成紙業</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 金融 / 保險 / 證券<span>5 筆</span></h3>
+              <p>中華開發金控、台灣中小企業銀行台中分行、玉山銀行、兆豐金控、凱基證券</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 工程 / 能源 / 公用事業 / 環境服務<span>5 筆</span></h3>
+              <p>中鼎工程、台電協和發電廠、華亞汽電、嘉惠電力、樹林焚化爐</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 半導體 / IC / 封測 / 晶圓材料<span>8 筆</span></h3>
+              <p>日月光中壢廠、日月光電子、世界先進、旺宏、瑞鼎科技、漢磊科技、環球晶圓、穩懋半導體</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 電信 / 交通 / 零售 / 資訊服務<span>4 筆</span></h3>
+              <p>台中港務局、台灣大哥大、群義運輸、臺灣鐵路管理局</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 化工 / 材料 / 塑橡膠<span>4 筆</span></h3>
+              <p>台化、奇美、南亞、義芳</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 其他製造 / 待確認細類<span>3 筆</span></h3>
+              <p>台灣產業國際永續聯盟專案、群浤科技、樂金</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 食品 / 生技 / 消費品<span>4 筆</span></h3>
+              <p>台灣菸酒、葡萄王、環泰企業、寶成</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 紡織 / 成衣 / 染整<span>2 筆</span></h3>
+              <p>福懋、遠東新世紀觀音印染廠</p>
+            </article>
+          </div>
+        </details>
+        <details class="standard-detail" id="sra" open>
+          <summary>
+            <span>永續報告書查證參與經驗</span>
+            <small>40 筆客戶名稱</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>服務業 - 金融 / 保險 / 證券<span>7 筆</span></h3>
+              <p>三商美邦、永豐金控、永豐餘、永豐證券、南山人壽、新光金控、臺灣期貨交易所</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 電信 / 交通 / 零售 / 資訊服務<span>7 筆</span></h3>
+              <p>中華航空、中華電信、太平洋崇光百貨、長榮航空、統一超商、精誠資訊、遠東百貨公司</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 工程 / 能源 / 公用事業 / 環境服務<span>4 筆</span></h3>
+              <p>中鼎工程、台灣電力公司、崑鼎、新鼎</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 電子 / 電腦 / 光電 / PCB / 零組件<span>13 筆</span></h3>
+              <p>仁寶電腦、正文科技、光寶科技、尖點科技、京鼎、明基材料、欣興電子、致伸、康舒、盛達、智邦、華碩電腦、達方電子</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 半導體 / IC / 封測 / 晶圓材料<span>2 筆</span></h3>
+              <p>天鈺、矽品</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 水泥 / 建材 / 玻璃 / 紙業 / 包裝<span>1 筆</span></h3>
+              <p>亞洲水泥</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 醫療 / 教育 / 研究 / 公益機構<span>2 筆</span></h3>
+              <p>東海大學、慈濟醫療財團法人</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 化工 / 材料 / 塑橡膠<span>1 筆</span></h3>
+              <p>東聯化學</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 紡織 / 成衣 / 染整<span>1 筆</span></h3>
+              <p>福懋興業</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 食品 / 生技 / 消費品<span>1 筆</span></h3>
+              <p>歐萊德</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 鋼鐵 / 金屬 / 機械 / 電機<span>1 筆</span></h3>
+              <p>豐祥金屬</p>
+            </article>
+          </div>
+        </details>
+        <details class="standard-detail" id="iso46001" open>
+          <summary>
+            <span>ISO 46001 驗證參與經驗</span>
+            <small>25 筆客戶名稱</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>服務業 - 金融 / 保險 / 證券<span>5 筆</span></h3>
+              <p>上海儲蓄銀行、玉山銀行、南山人壽、第一銀行、華南銀行</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 化工 / 材料 / 塑橡膠<span>6 筆</span></h3>
+              <p>中石化大社廠、中石化小港廠、中石化橋頭廠、亞東石化、南寶樹脂、僑力化工</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 醫療 / 教育 / 研究 / 公益機構<span>1 筆</span></h3>
+              <p>中國醫藥大學附設醫院</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 電子 / 電腦 / 光電 / PCB / 零組件<span>4 筆</span></h3>
+              <p>友達光電、明基材料、南茂科技、群創光電</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 半導體 / IC / 封測 / 晶圓材料<span>6 筆</span></h3>
+              <p>日月光中壢廠、日月光高雄廠、世界先進、京元電子、矽品、華泰電子</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 水泥 / 建材 / 玻璃 / 紙業 / 包裝<span>2 筆</span></h3>
+              <p>台泥和平廠、台泥蘇澳廠</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 紡織 / 成衣 / 染整<span>1 筆</span></h3>
+              <p>福懋</p>
+            </article>
+          </div>
+        </details>
+        <details class="standard-detail" id="qc080000" open>
+          <summary>
+            <span>IECQ QC080000 驗證參與經驗</span>
+            <small>102 筆客戶名稱</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>製造業 - 半導體 / IC / 封測 / 晶圓材料<span>10 筆</span></h3>
+              <p>力成、日月光集團、京元電子、旺宏、松翰、采鈺、原相、頎邦、精聯電子、聯發科</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 電子 / 電腦 / 光電 / PCB / 零組件<span>69 筆</span></h3>
+              <p>中日新、中華映管、仁寶電腦、台郡、正太科技、正美、正達國際、禾昌、禾瑞亞、立隆、立端、光磊科技、光寶科技、全台晶像、宇辰、安勤、安霸、旭立、旭立及高斯、百辰光電、位速、宏達國際電子、希華晶體、技嘉科技、沛鑫、迅捷科技、亞泰影像、佳世達科技、佳能企業、佳勝科技、金士頓、金瑞治、金像電子、阿爾發、建準、研華、科通、美琪、美磊、致威電子、英業達、英業達家電、英業達無敵科技、英群企業、英濟、荗森、偉創力、康舒科技、捷拓科技、盛達、通用電子國際、華宇電腦、圓剛、誠創、鼎元、磁威、精威、維麒、億光、廣迎、廣運、緯創資通、穎台、霖宏科技、環旭電子、聯茂、聲寶、鴻亞光電、耀華</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 鋼鐵 / 金屬 / 機械 / 電機<span>22 筆</span></h3>
+              <p>中國砂輪、中國電器、台一精密、台林、台芝、台端、巨博、立誠、京兆成、協順、坤遠、金運、金豐精密、飛國、晉倫、泰瑋、訊凱、超特、新日興、慶陞工業、龍漢、龍漢工業</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 工程 / 能源 / 公用事業 / 環境服務<span>1 筆</span></h3>
+              <p>尚穩環保</p>
+            </article>
+          </div>
+        </details>
+        <details class="standard-detail" id="iso14001-45001" open>
+          <summary>
+            <span>ISO 14001 / ISO 45001 驗證參與經驗</span>
+            <small>153 筆客戶名稱</small>
+          </summary>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>服務業 - 工程 / 能源 / 公用事業 / 環境服務<span>6 筆</span></h3>
+              <p>北岸環保、三井工程、太極能源、台灣中油、新鼎、樺欣環保</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 鋼鐵 / 金屬 / 機械 / 電機<span>24 筆</span></h3>
+              <p>竹翔工業、大同三峽廠、大武崙工業區、中國電器、中鋼碳素、六和機械、古河銅箔、台灣三葉、全球傳動、江申工業、竹翔工業、利順精密、宏泰電工、協祥、協機、金峰、春源鋼鐵、晉倫、常舜電機、造隆、勤益、儒億、興華、寶琳</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 電子 / 電腦 / 光電 / PCB / 零組件<span>59 筆</span></h3>
+              <p>一銓、力碩、中強光電、中揚光電、仁寶電腦、友志、友達光電、友達光電華亞廠、友銓電子、文菱、日鼎、台灣莫士、台灣華傑、正文科技、正達光電、禾昌、立隆、光寶光電、全新光電、同欣電子、宇辰系統科技、安費諾、安勤、旭立、位速、宜鼎國際、明和電子、迎廣、信昌、前源科技、研華、美強光學、英業達士林、峰瑞科技、益興電子、神達、康舒、彩晶、淩巨、惠爾得、敦南科技、華燈光電、群光電子、萬旭、詮興科技、誠創、達方電子、達運、精信、精泉科技、精銳、銓德、廣運、璟德電子、優志旺、聯亞科技、聯茂、聯捷、耀華</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 半導體 / IC / 封測 / 晶圓材料<span>5 筆</span></h3>
+              <p>力成、艾克爾、旺宏、聯發科、穩懋半導體</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 紡織 / 成衣 / 染整<span>3 筆</span></h3>
+              <p>力鵬楊梅、強盛染整、潤泰全球</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 其他製造 / 待確認細類<span>20 筆</span></h3>
+              <p>上河、大倡、五崧、五鼎生物技術、立凱、妍發科技、宏正、東方聯合、欣偉、益鼎、崑洲、捷寶、晨州、理嘉、連伸、麥豐、富致、斯巴克、德利威、霖豐</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 化工 / 材料 / 塑橡膠<span>12 筆</span></h3>
+              <p>大恭化學、中光橡膠、介明塑膠、台化龍德廠、台塑冬山廠、台耀、台灣山村、佳益科技材料、昶昕、國慶化學、普利司通、華田油墨</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 醫療 / 教育 / 研究 / 公益機構<span>5 筆</span></h3>
+              <p>工研院、中央大學、中原大學、臺北市立萬芳醫院、臺北醫學大學附設醫院</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 電信 / 交通 / 零售 / 資訊服務<span>6 筆</span></h3>
+              <p>中華郵政臺北郵件處理中心、台鐵宜蘭運務段、台鐵電訊中心、台灣大哥大、東立物流、近鐵</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 食品 / 生技 / 消費品<span>8 筆</span></h3>
+              <p>北煙、可口可樂、竹南啤酒廠、宏亞食品、金百利、雅文、嬌聯、歐萊德</p>
+            </article>
+            <article class="category-card">
+              <h3>製造業 - 水泥 / 建材 / 玻璃 / 紙業 / 包裝<span>4 筆</span></h3>
+              <p>台泥花蓮廠、台玻新竹廠、林口印刷、喜美包裝</p>
+            </article>
+            <article class="category-card">
+              <h3>服務業 - 金融 / 保險 / 證券<span>1 筆</span></h3>
+              <p>玉山銀行</p>
+            </article>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 博誠永續科技有限公司 SunTech Sustainibility.
+  </footer>
+</body>
+</html>
+
+

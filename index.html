@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>博誠永續科技有限公司 SunTech Sustainibility｜ESG 永續能源科技官網</title>
-  <meta name="description" content="博誠永續科技有限公司 SunTech Sustainibility 提供 ISO 50001、碳盤查、能源管理、供應鏈減碳與 AI 永續轉型服務。" />
+  <meta name="description" content="博誠永續科技有限公司 SunTech Sustainibility 提供永續報告書、ISO 50001、碳盤查、供應鏈減碳、水資源管理、環安衛管理與 AI 能源數據分析服務。" />
   <style>
     :root {
       --ink: #17201d;
@@ -130,6 +130,9 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 34px;
+    }
+    .actions.compact {
+      margin-top: 18px;
     }
     .button {
       min-height: 48px;
@@ -364,6 +367,62 @@
       color: var(--muted);
       font-weight: 800;
     }
+    .achievement-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .achievement-panel {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .84);
+      box-shadow: 0 14px 34px rgba(23, 32, 29, .07);
+    }
+    .achievement-panel h3 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.25;
+    }
+    .achievement-panel .note {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .achievement-item {
+      min-height: 118px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(247, 245, 239, .72);
+    }
+    .achievement-item b {
+      display: block;
+      color: var(--blue);
+      font-size: 16px;
+      line-height: 1.35;
+    }
+    .achievement-item span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 14px;
+    }
+    .standard-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .standard-list .achievement-item {
+      min-height: 138px;
+    }
 
     .resource {
       min-height: 232px;
@@ -430,6 +489,8 @@
         aspect-ratio: 4 / 5;
       }
       .grid-3 { grid-template-columns: 1fr; }
+      .achievement-grid,
+      .standard-list { grid-template-columns: 1fr; }
       .process { grid-template-columns: 1fr; }
       .step { border-right: 0; border-bottom: 1px solid var(--line); }
       .step:last-child { border-bottom: 0; }
@@ -467,9 +528,9 @@
     <section class="container hero">
       <div>
         <div class="eyebrow">SunTech Sustainibility · ESG · Energy · Net Zero</div>
-        <h1>以永續科技，協助企業把淨零轉型落地。</h1>
+        <h1>協助企業把 ESG、能源管理與碳盤查，轉化為可落地的淨零管理能力。</h1>
         <p class="lead">
-          博誠永續科技有限公司提供 ISO 50001 能源管理、碳盤查、供應鏈減碳與 AI 能源數據分析服務，協助企業把 ESG 壓力整理成清楚路徑、管理制度與可追蹤的改善成果。
+          博誠永續科技有限公司提供永續報告書、能源管理、碳管理、水資源管理、供應鏈減碳、環安衛管理、有害物質流程管理、企業內訓與 AI 能源數據分析服務，協助企業建立可執行、可稽核、可持續改善的管理制度。
         </p>
         <div class="actions">
           <a class="button primary" href="mailto:suntech0331@gmail.com">聯絡技術團隊</a>
@@ -477,14 +538,14 @@
         </div>
       </div>
 
-      <div class="hero-media" aria-label="公司技術總監與服務數據">
-        <figure class="portrait">
-          <img src="profile-sgs.jpg" alt="謝振誠 技術總監形象照" />
-        </figure>
+      <div class="hero-media" aria-label="公司服務能力摘要">
         <div class="director-card">
-          <small>Technical Director</small>
-          <strong>謝振誠｜技術總監</strong>
-          <span>負責能源管理、碳管理、ISO 系統導入與 AI 永續技術整合。</span>
+          <small>Professional Team</small>
+          <strong>永續能源與管理系統技術服務</strong>
+          <span>提供能源管理、碳管理、ISO 系統導入與 AI 永續技術整合服務。</span>
+          <div class="actions compact">
+            <a class="button" href="consultant.html">技術總監介紹</a>
+          </div>
         </div>
         <div class="metrics">
           <div class="metric"><b>30+</b><span>年永續能源與管理經驗</span></div>
@@ -509,44 +570,65 @@
         <div class="grid-3">
           <article class="service">
             <div>
-              <small>Energy System</small>
-              <h3>ISO 50001 能源管理</h3>
-              <p>能源審查、基線建立、績效指標、內稽訓練與系統導入，讓節能不只停留在專案。</p>
+              <small>Sustainability Reporting</small>
+              <h3>永續報告書</h3>
+              <p>協助企業建置永續資訊揭露流程，整合重大主題、管理方針、績效資料與利害關係人溝通內容。</p>
             </div>
           </article>
           <article class="service">
             <div>
-              <small>Carbon Management</small>
-              <h3>碳盤查與揭露</h3>
-              <p>協助盤查邊界、排放源、活動數據與佐證資料整理，支援企業回應供應鏈與 ESG 揭露需求。</p>
+              <small>Energy Management</small>
+              <h3>ISO 50001 能源管理</h3>
+              <p>建立能源審查、能源基線、能源績效指標與改善追蹤機制，讓節能成果進入日常管理。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Carbon Accounting</small>
+              <h3>碳盤查與碳管理</h3>
+              <p>支援 ISO 14064、GHG Protocol、IFRS S2、碳權申請與查證準備，建立可信賴的碳資料基礎。</p>
             </div>
           </article>
           <article class="service">
             <div>
               <small>Supply Chain</small>
-              <h3>供應鏈減碳策略</h3>
-              <p>針對客戶稽核、碳費、減碳承諾與採購要求，建立分階段減碳路線與內部治理節奏。</p>
+              <h3>供應鏈減碳</h3>
+              <p>協助企業回應客戶減碳要求、供應鏈稽核與碳揭露需求，規劃分階段減碳路線。</p>
             </div>
           </article>
           <article class="service">
             <div>
-              <small>AI Analytics</small>
-              <h3>AI 能源效率分析</h3>
-              <p>將能源資料、設備行為與營運情境連接，找出異常耗能、改善優先序與量測驗證依據。</p>
+              <small>Water Efficiency</small>
+              <h3>ISO 46001 水資源管理</h3>
+              <p>建置用水盤點、水資源效率指標與改善方案，協助企業降低用水風險並提升水資源管理能力。</p>
             </div>
           </article>
           <article class="service">
             <div>
-              <small>Training</small>
-              <h3>企業內訓與工作坊</h3>
-              <p>為管理層、廠務、品保與永續團隊設計實務課程，讓知識能回到現場流程。</p>
+              <small>Hazardous Substance</small>
+              <h3>IECQ QC080000 有害物質流程管理</h3>
+              <p>協助電子與供應鏈企業建立有害物質流程管理、內部稽核與持續符合客戶要求的管理機制。</p>
             </div>
           </article>
           <article class="service">
             <div>
-              <small>Governance</small>
-              <h3>ESG 治理制度</h3>
-              <p>整理角色分工、年度目標、資料流程與管理審查，形成可稽核、可追蹤的永續管理架構。</p>
+              <small>EHS Management</small>
+              <h3>ISO 14001 / ISO 45001 環安衛管理</h3>
+              <p>整合環境管理、職業安全衛生風險鑑別、法規符合性與內部稽核，提升環安衛治理能力。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>Customized Training</small>
+              <h3>企業客製化內訓</h3>
+              <p>依管理層、永續團隊、廠務、品保與供應鏈角色設計課程，讓制度知識能回到現場流程。</p>
+            </div>
+          </article>
+          <article class="service">
+            <div>
+              <small>AI Energy Analytics</small>
+              <h3>AI 能源數據分析</h3>
+              <p>結合能源資料、設備行為與營運情境，找出異常耗能、改善優先序與量測驗證依據。</p>
             </div>
           </article>
         </div>
@@ -591,24 +673,86 @@
     </section>
 
     <section class="section alt" id="clients">
-      <div class="container proof-band">
-        <div class="proof-copy">
-          <p class="section-label">Experience</p>
-          <h2>服務半導體、電子製造、工程、醫療與高科技供應鏈。</h2>
-          <p>
-            以稽核、輔導與訓練經驗連接企業現場，協助不同產業把能源效率與永續治理放進日常管理。
+      <div class="container achievement-stack">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Experience</p>
+            <h2>公司輔導實績與顧問師驗證查證經驗。</h2>
+          </div>
+          <p></p>
+        </div>
+
+        <article class="achievement-panel">
+          <h3>公司輔導、訓練與量測驗證實績</h3>
+          <p class="note">
+            博誠永續科技協助企業導入管理系統、建立內部稽核能力，並以量測驗證方法追蹤節能改善成果。
           </p>
-        </div>
-        <div class="client-list" aria-label="客戶與產業經驗">
-          <span>台積電</span>
-          <span>聯電</span>
-          <span>日月光</span>
-          <span>友達光電</span>
-          <span>聯發科</span>
-          <span>中鼎工程</span>
-          <span>中國鋼鐵</span>
-          <span>電子供應鏈</span>
-        </div>
+          <div class="achievement-grid">
+            <div class="achievement-item">
+              <b>ISO 50001 能源管理系統輔導</b>
+              <span>協助製造業與工程服務企業建立能源審查、基線、績效指標與管理制度。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 46001 水資源效率管理系統輔導</b>
+              <span>協助高科技製造業建立水資源效率指標、用水風險盤點與改善管理流程。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 14064-1 溫室氣體盤查輔導</b>
+              <span>協助醫療服務機構建立排放邊界、活動數據盤點與查證準備資料。</span>
+            </div>
+            <div class="achievement-item">
+              <b>節能量量測與驗證</b>
+              <span>以 M&V 方法協助企業確認節能改善前後的能源績效差異。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 50001 內部稽核訓練</b>
+              <span>協助企業培養能源管理系統內部稽核與持續改善能力。</span>
+            </div>
+            <div class="achievement-item">
+              <b>IECQ QC080000 內部稽核訓練</b>
+              <span>協助電子製造業建立有害物質流程管理內部稽核能力。</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="achievements.html">查看完整實績</a>
+          </div>
+        </article>
+
+        <article class="achievement-panel">
+          <h3>顧問師曾參與驗證或查證實績</h3>
+          <p class="note">
+            下列為顧問師過往曾參與驗證或查證之產業經驗彙整，作為專業背景與產業熟悉度說明，非表示皆為博誠永續科技直接執行之驗證或查證案件。
+          </p>
+          <div class="standard-list">
+            <div class="achievement-item">
+              <b>ISO 50001 驗證參與經驗</b>
+              <span>涵蓋製造業 174 筆、服務業 117 筆，產業包含半導體、電子光電、化工材料、鋼鐵金屬、金融、醫療、學校與公用事業等。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 14064-1 查證參與經驗</b>
+              <span>共 58 筆，涵蓋半導體、電子光電、紙業包裝、金融、電信交通、能源工程與食品生技等。</span>
+            </div>
+            <div class="achievement-item">
+              <b>永續報告書查證參與經驗</b>
+              <span>共 40 筆，涵蓋金融保險、電信交通零售、能源工程、電子光電、半導體、醫療教育與製造業。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 46001 驗證參與經驗</b>
+              <span>共 25 筆，涵蓋金融、醫療、化工材料、電子光電、半導體、水泥建材與紡織產業。</span>
+            </div>
+            <div class="achievement-item">
+              <b>IECQ QC080000 驗證參與經驗</b>
+              <span>共 102 筆，主要涵蓋半導體、電子電腦、光電、PCB、電子零組件、金屬機械與環境服務。</span>
+            </div>
+            <div class="achievement-item">
+              <b>ISO 14001 / ISO 45001 驗證參與經驗</b>
+              <span>共 153 筆，涵蓋電子光電、半導體、化工材料、金屬機械、食品生技、醫療教育、交通物流與金融服務。</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="button" href="achievements.html#advisor-experience">查看顧問師參與經驗</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -620,7 +764,7 @@
             <h2>延伸內容與展示頁面。</h2>
           </div>
           <p>
-            整合公司介紹、能源效率簡報與論文重點簡報，讓官網同時具備品牌展示、技術說明與教學資源入口。
+            提供服務方法、技術背景與能源管理專題資料，協助企業進一步了解永續能源管理的導入方式。
           </p>
         </div>
 
@@ -659,7 +803,7 @@
           <p class="section-label">Contact</p>
           <h2>與博誠永續科技一起規劃企業淨零轉型。</h2>
           <p>
-            適合正在面對 ISO 50001、碳盤查、供應鏈減碳、ESG 揭露或 AI 能源管理需求的企業團隊，由技術總監謝振誠帶領技術服務規劃。
+            適合正在面對永續報告書、ISO 50001、碳盤查、供應鏈減碳、ISO 46001、IECQ QC080000、環安衛管理或 AI 能源數據分析需求的企業團隊，由技術總監謝振誠帶領技術服務規劃。
           </p>
         </div>
         <div class="contact-actions">
